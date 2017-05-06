@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/primary">
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/logo"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/music_logo"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        />
+	<Button android:id="@+id/btn_launch_oauth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4Shared Login"
+            android:theme="@style/DefaultButton"
+        android:layout_gravity="center_horizontal" />
+
+	<Button android:id="@+id/btn_clear_credentials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear Credentials"
+            android:theme="@style/DefaultButton"
+        android:layout_gravity="center_horizontal" />
+    <!--<android.support.design.widget-->
+
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/scrollView"
+		android:layout_gravity="center_horizontal">
+		<GridLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+			<TextView android:id="@+id/response_code"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text=""
+				android:textColor="#000000"
+				android:typeface="normal"/>
+		</GridLayout>
+	</ScrollView>
+
+
+</LinearLayout>

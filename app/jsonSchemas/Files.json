@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "modified": {
+            "type": "string"
+          },
+          "description": {
+            "type": "null"
+          },
+          "tags": {
+            "type": "array",
+            "items": {}
+          },
+          "path": {
+            "type": "null"
+          },
+          "parentId": {
+            "type": "string"
+          },
+          "downloadPage": {
+            "type": "string"
+          },
+          "ownerId": {
+            "type": "string"
+          },
+          "mimeType": {
+            "type": "string"
+          },
+          "exif": {
+            "type": "null"
+          },
+          "md5": {
+            "type": "string"
+          },
+          "ownerOnly": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string"
+          },
+          "virusScanResult": {
+            "type": "string"
+          },
+          "id3": {
+            "type": "object",
+            "properties": {
+              "bitrate": {
+                "type": "integer"
+              },
+              "samplerate": {
+                "type": "integer"
+              },
+              "track": {
+                "type": "integer"
+              },
+              "year": {
+                "type": "integer"
+              },
+              "genre": {
+                "type": "string"
+              },
+              "album": {
+                "type": "string"
+              },
+              "artist": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "length": {
+                "type": "integer"
+              },
+              "preciseLength": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "bitrate",
+              "samplerate",
+              "track",
+              "year",
+              "genre",
+              "album",
+              "artist",
+              "title",
+              "length",
+              "preciseLength"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "size",
+          "modified",
+          "description",
+          "tags",
+          "path",
+          "parentId",
+          "downloadPage",
+          "ownerId",
+          "mimeType",
+          "exif",
+          "md5",
+          "ownerOnly",
+          "status",
+          "virusScanResult",
+          "id3"
+        ]
+      }
+    }
+  },
+  "required": [
+    "files"
+  ]
+}
