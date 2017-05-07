@@ -1,15 +1,17 @@
-
-
-
 apply plugin: 'com.android.application'
 android {
-    compileSdkVersion 24
-    buildToolsVersion '25.0.0'
+    packagingOptions {
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/notice.txt'
+
+    }
+    compileSdkVersion 25
+    buildToolsVersion '25.0.1'
 
     defaultConfig {
         applicationId "com.a1337.kt.musiq"
         minSdkVersion 15
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
     }
@@ -23,8 +25,8 @@ android {
     dependencies {
         compile fileTree(dir: 'libs', include: ['*.jar'])
         testCompile 'junit:junit:4.12'
-        compile 'com.android.support:appcompat-v7:24.1.1'
-        compile 'com.android.support:design:24.1.1'
+        compile 'com.android.support:appcompat-v7:25.3.1'
+        compile 'com.android.support:design:25.3.1'
         compile 'com.squareup.okhttp3:okhttp:3.0.1'
     }
 
@@ -46,8 +48,9 @@ dependencies {
     compile files('libs/signpost-commonshttp-1.2.1.1.jar')
     compile files('libs/signpost-core-1.2.1.2.jar')
     compile 'org.glassfish.main:javax.annotation:4.0-b33'
-    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.android.support:appcompat-v7'
     compile 'org.springframework.android:spring-android-rest-template:2.0.0.M3'
+
 }
 
 apply plugin: 'jsonschema2pojo'
@@ -93,7 +96,7 @@ jsonSchema2Pojo {
     usePrimitives = false
 
     // Location of the JSON Schema file(s). This may refer to a single file or a directory of files.
-    source = files("/jsonSchemas")
+    source = files("./jsonSchemas")
 
     // Target directory for generated Java source files. The plugin will add this directory to the
     // java source set so the compiler will find and compile the newly generated source files.
@@ -156,7 +159,7 @@ jsonSchema2Pojo {
     //  - jsonschema (schema documents, containing formal rules that describe the structure of json data)
     //  - json (documents that represent an example of the kind of json data that the generated Java types
     //          will be mapped to)
-    sourceType = 'jsonschema'
+    sourceType = 'json'
 
     // Whether to empty the target directory before generation occurs, to clear out all source files
     // that have been generated previously. <strong>Be warned</strong>, when activated this option
@@ -195,4 +198,8 @@ jsonSchema2Pojo {
 
     // Whether to make the generated types Serializable
     serializable = false
+}
+dependencies {
+    compile 'com.android.support:support-v4:25.+'
+    compile 'com.android.support:recyclerview-v7:25.+'
 }

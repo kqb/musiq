@@ -13,12 +13,14 @@
         android:layout_marginTop="60dp"
         android:layout_marginBottom="60dp"
         />
-	<Button android:id="@+id/btn_launch_oauth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4Shared Login"
-            android:theme="@style/DefaultButton"
-        android:layout_gravity="center_horizontal" />
+
+	<Button
+		android:id="@+id/btn_launch_oauth"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:text="4Shared Login"
+		android:theme="@style/DefaultButton" />
 
 	<Button android:id="@+id/btn_clear_credentials"
             android:layout_width="wrap_content"

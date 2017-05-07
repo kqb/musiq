@@ -1,132 +1,221 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "files": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "size": {
-            "type": "integer"
-          },
-          "modified": {
-            "type": "string"
-          },
-          "description": {
-            "type": "null"
-          },
-          "tags": {
-            "type": "array",
-            "items": {}
-          },
-          "path": {
-            "type": "null"
-          },
-          "parentId": {
-            "type": "string"
-          },
-          "downloadPage": {
-            "type": "string"
-          },
-          "ownerId": {
-            "type": "string"
-          },
-          "mimeType": {
-            "type": "string"
-          },
-          "exif": {
-            "type": "null"
-          },
-          "md5": {
-            "type": "string"
-          },
-          "ownerOnly": {
-            "type": "boolean"
-          },
-          "status": {
-            "type": "string"
-          },
-          "virusScanResult": {
-            "type": "string"
-          },
-          "id3": {
-            "type": "object",
-            "properties": {
-              "bitrate": {
-                "type": "integer"
-              },
-              "samplerate": {
-                "type": "integer"
-              },
-              "track": {
-                "type": "integer"
-              },
-              "year": {
-                "type": "integer"
-              },
-              "genre": {
-                "type": "string"
-              },
-              "album": {
-                "type": "string"
-              },
-              "artist": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "length": {
-                "type": "integer"
-              },
-              "preciseLength": {
-                "type": "number"
-              }
-            },
-            "required": [
-              "bitrate",
-              "samplerate",
-              "track",
-              "year",
-              "genre",
-              "album",
-              "artist",
-              "title",
-              "length",
-              "preciseLength"
-            ]
-          }
-        },
-        "required": [
-          "id",
-          "name",
-          "size",
-          "modified",
-          "description",
-          "tags",
-          "path",
-          "parentId",
-          "downloadPage",
-          "ownerId",
-          "mimeType",
-          "exif",
-          "md5",
-          "ownerOnly",
-          "status",
-          "virusScanResult",
-          "id3"
-        ]
+  "files": [
+    {
+      "id": "knzmqAGI",
+      "name": "DJ CeeJay- Big Bang Hour_05012009.mp3",
+      "size": 82804736,
+      "modified": "2009-05-05T01:51:09.000Z",
+      "description": null,
+      "tags": null,
+      "path": null,
+      "parentId": "oOS-LBw5",
+      "downloadPage": "https:\/\/www.4shared.com\/s\/fknzmqAGI",
+      "ownerId": "Dw9uZq_m",
+      "mimeType": "audio\/mpeg",
+      "exif": null,
+      "md5": "470103e4afd274606df241909aae3a70",
+      "ownerOnly": false,
+      "status": "normal",
+      "virusScanResult": "clean",
+      "apkInfo": null,
+      "id3": {
+        "bitrate": 96,
+        "samplerate": 44100,
+        "track": 0,
+        "year": 0,
+        "genre": "",
+        "album": "",
+        "artist": "",
+        "title": "",
+        "length": 6910,
+        "preciseLength": 6910
+      }
+    },
+    {
+      "id": "46N06GAC",
+      "name": "04 - The Big Bang Theory.mp3",
+      "size": 75254462,
+      "modified": "2013-02-18T02:34:23.000Z",
+      "description": null,
+      "tags": null,
+      "path": null,
+      "parentId": "zW-4_PTF",
+      "downloadPage": "https:\/\/www.4shared.com\/s\/f46N06GAC",
+      "ownerId": "aSzid-2G",
+      "mimeType": "audio\/mpeg",
+      "exif": null,
+      "md5": "e9eb3539f640d5eca0b95a2308db3a29",
+      "ownerOnly": false,
+      "status": "normal",
+      "virusScanResult": "clean",
+      "apkInfo": null,
+      "id3": {
+        "bitrate": 128,
+        "samplerate": 44100,
+        "track": 4,
+        "year": 2010,
+        "genre": "Podcast",
+        "album": "CEREALCAST, SÉRIES COM CEREAL",
+        "artist": "CEREALCAST.com.br",
+        "title": "04: The Big Bang Theory",
+        "length": 4694,
+        "preciseLength": 4694.988
+      }
+    },
+    {
+      "id": "KLdoH6nJce",
+      "name": "TeoríadelBigBang 18 de marzo.mp3",
+      "size": 74020002,
+      "modified": "2014-03-18T22:00:22.627Z",
+      "description": null,
+      "tags": null,
+      "path": null,
+      "parentId": "c5_4ryje",
+      "downloadPage": "https:\/\/www.4shared.com\/s\/fKLdoH6nJce",
+      "ownerId": "orUcWJc8",
+      "mimeType": "audio\/mpeg",
+      "exif": null,
+      "md5": "05555cdd2548ac1bc204db73fcb1bfcc",
+      "ownerOnly": false,
+      "status": "normal",
+      "virusScanResult": "clean",
+      "apkInfo": null,
+      "id3": {
+        "bitrate": 128,
+        "samplerate": 44100,
+        "track": 0,
+        "year": 0,
+        "genre": "",
+        "album": "",
+        "artist": "",
+        "title": "",
+        "length": 4636,
+        "preciseLength": 4636.8916
+      }
+    },
+    {
+      "id": "CNRppe61ce",
+      "name": "K_1_2_big_bang.mp3",
+      "size": 63008600,
+      "modified": "2014-12-08T02:00:11.569Z",
+      "description": null,
+      "tags": null,
+      "path": null,
+      "parentId": "GNaoSjGc",
+      "downloadPage": "https:\/\/www.4shared.com\/s\/fCNRppe61ce",
+      "ownerId": "uBu9wAKL",
+      "mimeType": "audio\/mpeg",
+      "exif": null,
+      "md5": "3caba9579dda8c8a29eab7ed39f8bb18",
+      "ownerOnly": false,
+      "status": "normal",
+      "virusScanResult": "clean",
+      "apkInfo": null,
+      "id3": {
+        "bitrate": 128,
+        "samplerate": 44100,
+        "track": 0,
+        "year": 0,
+        "genre": "",
+        "album": "",
+        "artist": "",
+        "title": "",
+        "length": 3947,
+        "preciseLength": 3947.076
+      }
+    },
+    {
+      "id": "FzWz6v6fba",
+      "name": "Big Bang Prog Nº 5.mp3",
+      "size": 59483063,
+      "modified": "2015-12-06T09:37:49.748Z",
+      "description": null,
+      "tags": null,
+      "path": null,
+      "parentId": "QidAl8ZR",
+      "downloadPage": "https:\/\/www.4shared.com\/s\/fFzWz6v6fba",
+      "ownerId": "uFawpNKQ",
+      "mimeType": "audio\/mpeg",
+      "exif": null,
+      "md5": "466663804c1cfd8086bb6a7848ceeaeb",
+      "ownerOnly": false,
+      "status": "normal",
+      "virusScanResult": "clean",
+      "apkInfo": null,
+      "id3": {
+        "bitrate": 128,
+        "samplerate": 32000,
+        "track": 0,
+        "year": 0,
+        "genre": "",
+        "album": "",
+        "artist": "",
+        "title": "",
+        "length": 3717,
+        "preciseLength": 3717.648
+      }
+    },
+    {
+      "id": "Mqt5rmIRba",
+      "name": "Prog. Nº 6 - de Big Bang.mp3",
+      "size": 59359808,
+      "modified": "2015-12-06T09:05:24.340Z",
+      "description": null,
+      "tags": null,
+      "path": null,
+      "parentId": "QidAl8ZR",
+      "downloadPage": "https:\/\/www.4shared.com\/s\/fMqt5rmIRba",
+      "ownerId": "uFawpNKQ",
+      "mimeType": "audio\/mpeg",
+      "exif": null,
+      "md5": "7f303a8a347b3bcf30ccb8837f15458c",
+      "ownerOnly": false,
+      "status": "normal",
+      "virusScanResult": "clean",
+      "apkInfo": null,
+      "id3": {
+        "bitrate": 128,
+        "samplerate": 32000,
+        "track": 0,
+        "year": 0,
+        "genre": "",
+        "album": "",
+        "artist": "",
+        "title": "",
+        "length": 3709,
+        "preciseLength": 3709.98
+      }
+    },
+    {
+      "id": "9mijRYssce",
+      "name": "4º Prog. Big-Bang.mp3",
+      "size": 57040136,
+      "modified": "2015-11-28T08:34:01.498Z",
+      "description": null,
+      "tags": null,
+      "path": null,
+      "parentId": "QidAl8ZR",
+      "downloadPage": "https:\/\/www.4shared.com\/s\/f9mijRYssce",
+      "ownerId": "uFawpNKQ",
+      "mimeType": "audio\/mpeg",
+      "exif": null,
+      "md5": "fe7ebf0c83fb9fdb163676fdf6607289",
+      "ownerOnly": false,
+      "status": "normal",
+      "virusScanResult": "clean",
+      "apkInfo": null,
+      "id3": {
+        "bitrate": 128,
+        "samplerate": 32000,
+        "track": 0,
+        "year": 0,
+        "genre": "",
+        "album": "",
+        "artist": "",
+        "title": "",
+        "length": 3564,
+        "preciseLength": 3564.972
       }
     }
-  },
-  "required": [
-    "files"
   ]
 }

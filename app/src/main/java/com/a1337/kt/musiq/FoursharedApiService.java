@@ -4,13 +4,13 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,23 +25,36 @@ public class FoursharedApiService extends IntentService {
     private static final int PICK_CONTACT = 0;
     final String TAG = getClass().getName();
     private SharedPreferences prefs;
+    private Intent intent;
+    private String requestedAction;
+
+
     public FoursharedApiService() {
         super("FoursharedApiService");
     }
 
+
     @Override
     protected void onHandleIntent(Intent intent) {
+        this.intent = intent;
         this.prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String request = intent.getStringExtra("request");
+        String request = intent.getStringExtra(Constants.REQUEST_URL_ALIAS);
+        requestedAction = intent.getStringExtra(Constants.REQUEST_ACTION_ALIAS);
         if(request == "" ||request == null){
             Log.e(TAG, "Request cannot be empty!");
         } else {
-            performApiCall(request);
+            if (Constants.ACTION_HANDLE_MEDIA.equals(requestedAction))
+                handleMedia(request);
+            else
+                performApiCall(request);
         }
 
 //        performApiCall(Constants.API_REQUEST);
     }
 
+    public void handleMedia(String request) {
+
+    }
     public void performApiCall(String request) {
 //        TextView textView = (TextView) findViewById(R.id.response_code);
         String jsonOutput = "";
@@ -72,15 +85,19 @@ public class FoursharedApiService extends IntentService {
 
         }
         try {
-
-            System.out.println("jsonOutput : " + jsonOutput);
-            JSONObject jsonResponse = new JSONObject(jsonOutput);
-
-            Log.i(TAG, jsonOutput);
-//            textView.setText(jsonOutput);
+            broadcastHelper(requestedAction, jsonOutput);
         } catch (Exception e) {
             Log.e(TAG, "Error executing request",e);
 //            textView.setText("Error retrieving contacts : " + jsonOutput);
+        }
+    }
+
+    private void broadcastHelper(String requestedAction, String jsonOutput) {
+        if (requestedAction != null) {
+            Intent newIntent = new Intent();
+            newIntent.putExtra(Constants.QUERY_RESULT, jsonOutput);
+            newIntent.setAction(Constants.ACTION_HANDLE_RESULTS);
+            LocalBroadcastManager.getInstance(this).sendBroadcast(newIntent);
         }
     }
 
@@ -141,13 +158,13 @@ public class FoursharedApiService extends IntentService {
             try {
                 data = response.getEntity().getContent();
 
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(data));
-            String responeLine;
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(data));
+                String responeLine;
 
-            while ((responeLine = bufferedReader.readLine()) != null) {
-                responseBuilder.append(responeLine);
-            }
-            Log.i(TAG,"Response : " + responseBuilder.toString());
+                while ((responeLine = bufferedReader.readLine()) != null) {
+                    responseBuilder.append(responeLine);
+                }
+                Log.i(TAG, "Response : " + responseBuilder.toString());
             } catch (IOException e) {
                 e.printStackTrace();
             }

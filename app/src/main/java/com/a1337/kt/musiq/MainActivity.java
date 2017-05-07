@@ -8,19 +8,19 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.widget.SearchView;
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import oauth.signpost.OAuth;
@@ -61,14 +61,6 @@ public class MainActivity extends AppCompatActivity
         String token = prefs.getString(OAuth.OAUTH_TOKEN, "");
         String secret = prefs.getString(OAuth.OAUTH_TOKEN_SECRET, "");
         Log.i(TAG, "OAUTH_token: "+token+ "  OAUTH_token_secret: "+secret);
-
-        Intent fsApiCall = new Intent(this, FoursharedApiService.class);
-        fsApiCall.putExtra("request", Constants.API_REQUEST);
-        startService(fsApiCall);
-
-
-
-
     }
 
     @Override
