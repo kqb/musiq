@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 android {
     packagingOptions {
         exclude 'META-INF/license.txt'
@@ -14,8 +16,12 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        multiDexEnabled = true
     }
     buildTypes {
+        debug {
+            testCoverageEnabled = false
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -50,6 +56,12 @@ dependencies {
     compile 'org.glassfish.main:javax.annotation:4.0-b33'
     compile 'com.android.support:appcompat-v7'
     compile 'org.springframework.android:spring-android-rest-template:2.0.0.M3'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    //anko
+    compile 'org.jetbrains.anko:anko-sdk15:0.8.2' // sdk19, sdk21, sdk23 are also available
+    compile 'org.jetbrains.anko:anko-support-v4:0.8.2' // In case you need support-v4 bindings
+    compile 'org.jetbrains.anko:anko-appcompat-v7:0.8.2' // For appcompat-v7 bindings
 
 }
 
@@ -62,6 +74,8 @@ buildscript {
 
     dependencies {
         // this plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
         classpath 'org.jsonschema2pojo:jsonschema2pojo-gradle-plugin:0.4.24'
         // add additional dependencies here if you wish to reference instead of generate them (see example directory)
     }

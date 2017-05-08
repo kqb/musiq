@@ -72,8 +72,8 @@ public class SearchResultRecyclerViewAdapter extends RecyclerView.Adapter<Search
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mIdView = (TextView) view.findViewById(R.id.listItemId);
+            mContentView = (TextView) view.findViewById(R.id.listItemContent);
         }
 
 
